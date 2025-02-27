@@ -49,7 +49,7 @@ export default function OurServices() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
-                        <div key={index} className="bg-white p-8 border group hover:border-red-600 transition-colors">
+                        <div key={index} className="bg-white p-8 border group hover:border-red-600 transition-colors shadow-sm">
                             <service.icon className="h-12 w-12 text-red-600 mb-6" />
                             <h3 className="text-xl font-bold mb-4">{service.title}</h3>
                             <p className="text-gray-600">{service.description}</p>

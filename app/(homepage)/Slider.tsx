@@ -13,15 +13,12 @@ export default function HeroSlider() {
                 spaceBetween={0}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 2500,
+                    delay: 3500,
                     disableOnInteraction: false,
                 }}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper h-screen w-full relative"
             >
-                {/* Dark Overlay */}
-                {/* <div className="absolute inset-0 bg-black/30 z-10"></div> */}
-
                 <SwiperSlide><img className='h-full w-full object-cover' src="/hero1.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img className='h-full w-full object-cover' src="/hero2.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img className='h-full w-full object-cover' src="/hero3.jpg" alt="" /></SwiperSlide>

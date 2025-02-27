@@ -1,3 +1,4 @@
+import ComponentHeader from "@/components/ComponentHeader"
 import { Building2, Home, Building, Paintbrush2, Grid2X2, Wrench } from "lucide-react"
 
 const services = [
@@ -40,13 +41,7 @@ export default function OurServices() {
     return (
         <section id="services" className="py-20">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold mb-4">Our Services</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Comprehensive interior design and renovation solutions for every space
-                    </p>
-                </div>
-
+                <ComponentHeader title="Our Services" subtitle="Comprehensive interior design and renovation solutions for every space" />
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <div key={index} className="bg-white p-8 border group hover:border-red-600 transition-colors shadow-sm">

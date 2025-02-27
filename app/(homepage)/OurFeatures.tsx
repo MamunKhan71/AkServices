@@ -39,7 +39,7 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description, icon, company }) => (
-    <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-neutral-100">
+    <div className="group bg-white rounded-none overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-neutral-100">
         <div className="relative h-64 overflow-hidden">
             <Image
                 src={image}

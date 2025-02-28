@@ -16,7 +16,7 @@ export default function Features() {
             <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8">
-                        <h2 className="text-4xl font-bold">Why One Excel is Your Best Choice</h2>
+                        <h2 className="text-4xl font-bold max-w-xl leading-[32px] md:leading-[48px]">Why Ak Contractor Service is Your Best Choice</h2>
                         <p className="text-gray-600 text-lg">
                             With years of experience in the industry, we deliver exceptional interior design and renovation services
                             that exceed expectations.

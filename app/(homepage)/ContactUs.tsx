@@ -12,7 +12,7 @@ function SubmitButton() {
         <button
             type="submit"
             disabled={pending}
-            className="group relative flex items-center justify-center w-full md:w-auto px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
+            className="group relative flex items-center justify-center w-full  px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
         >
             <span className="flex items-center">
                 {pending ? (
@@ -116,7 +116,7 @@ export default function ContactSection() {
 
                             <motion.div variants={itemVariants} className="flex items-start space-x-4">
                                 <div className="mt-1 bg-white rounded-full p-3 shadow-sm">
-                                    <MessageSquare className="w-5 h-5 " />
+                                    <MessageSquare className="w-5 h-5 text-gray-600" />
                                 </div>
                                 <div>
                                     <h3 className="font-medium">Live Chat</h3>

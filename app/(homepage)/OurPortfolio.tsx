@@ -107,7 +107,7 @@ export default function PortfolioSection() {
                             onHoverEnd={() => setHoveredProject(null)}
                             className="relative overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300"
                         >
-                            <div className="aspect-[4/3] relative">
+                            <div className="aspect-[4/3] relative overflow-hidden">
                                 <Image
                                     src={project.image || "/placeholder.svg"}
                                     alt={project.title}
@@ -159,9 +159,10 @@ export default function PortfolioSection() {
 
                         </motion.div>
                     ))}
-                    <div className="col-span-3 flex justify-center items-center w-full mt-4">
+                    {/* TODO */}
+                    {/* <div className="col-span-3 flex justify-center items-center w-full mt-4">
                         <Button className="text-xl">View All <ArrowDown size={20}/></Button>
-                    </div>
+                    </div> */}
                 </motion.div>
             </div>
         </section>

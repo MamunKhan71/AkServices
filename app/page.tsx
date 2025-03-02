@@ -1,9 +1,10 @@
 import HeroSlider from "@/app/(homepage)/Slider";
-import OurServices from "./(homepage)/OurServices";
+import Testimonials from "./(homepage)/ClientReview";
+import ContactSection from "./(homepage)/ContactUs";
 import Features from "./(homepage)/Features";
 import OurFeatures from "./(homepage)/OurFeatures";
 import PortfolioSection from "./(homepage)/OurPortfolio";
-import ContactSection from "./(homepage)/ContactUs";
+import OurServices from "./(homepage)/OurServices";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <OurFeatures />
       <Features />
       <PortfolioSection />
+      <Testimonials />
       <ContactSection />
     </div>
   );

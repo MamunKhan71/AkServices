@@ -2,24 +2,47 @@ import { Button } from '../button'
 
 const WhatsappContactButton = () => {
     return (
-        <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-green-600 rounded-none blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-            <Button className="relative w-full h-14 bg-green-500 hover:bg-green-600 rounded-none shadow-lg flex items-center justify-center gap-3 group transition-all duration-300 hover:scale-[1.02]">
-                <div className="flex items-center justify-center h-8 w-8 bg-white rounded-full">
+        <div className="w-full h-full">
+            <Button className='w-full bg-[#1BD741] h-full'>
+                <div className='h-full'>
                     <svg
+                        version="1.1"
+                        id="Capa_1"
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="h-5 w-5 text-green-500"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 455.731 455.731"
+                        xmlSpace="preserve"
                     >
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        <g>
+                            <rect
+                                x={0}
+                                y={0}
+                                style={{ fill: "#1BD741" }}
+                                width="555.731"
+                                height="555.731"
+                            />
+                            <g>
+                                <path
+                                    style={{ fill: "#FFFFFF" }}
+                                    d="M68.494,387.41l22.323-79.284c-14.355-24.387-21.913-52.134-21.913-80.638
+			c0-87.765,71.402-159.167,159.167-159.167s159.166,71.402,159.166,159.167c0,87.765-71.401,159.167-159.166,159.167
+			c-27.347,0-54.125-7-77.814-20.292L68.494,387.41z M154.437,337.406l4.872,2.975c20.654,12.609,44.432,19.274,68.762,19.274
+			c72.877,0,132.166-59.29,132.166-132.167S300.948,95.321,228.071,95.321S95.904,154.611,95.904,227.488
+			c0,25.393,7.217,50.052,20.869,71.311l3.281,5.109l-12.855,45.658L154.437,337.406z"
+                                />
+                                <path
+                                    style={{ fill: "#FFFFFF" }}
+                                    d="M183.359,153.407l-10.328-0.563c-3.244-0.177-6.426,0.907-8.878,3.037
+			c-5.007,4.348-13.013,12.754-15.472,23.708c-3.667,16.333,2,36.333,16.667,56.333c14.667,20,42,52,90.333,65.667
+			c15.575,4.404,27.827,1.435,37.28-4.612c7.487-4.789,12.648-12.476,14.508-21.166l1.649-7.702c0.524-2.448-0.719-4.932-2.993-5.98
+			l-34.905-16.089c-2.266-1.044-4.953-0.384-6.477,1.591l-13.703,17.764c-1.035,1.342-2.807,1.874-4.407,1.312
+			c-9.384-3.298-40.818-16.463-58.066-49.687c-0.748-1.441-0.562-3.19,0.499-4.419l13.096-15.15
+			c1.338-1.547,1.676-3.722,0.872-5.602l-15.046-35.201C187.187,154.774,185.392,153.518,183.359,153.407z"
+                                />
+                            </g>
+                        </g>
                     </svg>
+
                 </div>
                 <span className="font-bold text-base">WhatsApp Now</span>
             </Button>

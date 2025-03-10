@@ -1,8 +1,8 @@
 "use client"
 
 import { cn } from "@/lib/utils"; // If you have a classNames utility
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface Service {
     name: string
@@ -27,7 +27,7 @@ export default function Sidebar() {
     const pathname = usePathname()
 
     return (
-        <aside className="w-full md:w-64 lg:w-72 bg-white border-r shadow-sm">
+        <aside className="w-full md:w-64 lg:w-72 bg-white border shadow-sm sticky top-28">
             {/* Header */}
             <div className="bg-blue-600 text-white px-4 py-5">
                 <h2 className="text-xl font-semibold uppercase tracking-wide">
@@ -57,7 +57,7 @@ export default function Sidebar() {
             </nav>
 
             {/* “Need Help?” Box */}
-            <div className="border-t bg-gray-50 p-4">
+            {/* <div className="border-t bg-gray-50 p-4">
                 <h3 className="text-sm font-semibold text-gray-800 mb-2">Need Help?</h3>
                 <p className="text-sm text-gray-600 mb-3">
                     Contact us for more information or assistance.
@@ -66,7 +66,7 @@ export default function Sidebar() {
                     <p className="font-semibold text-gray-800">+1 (234) 567-890</p>
                     <p className="text-gray-500">Mon - Fri, 9AM - 6PM</p>
                 </div>
-            </div>
+            </div> */}
         </aside>
     )
 }

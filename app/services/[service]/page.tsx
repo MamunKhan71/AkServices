@@ -29,11 +29,9 @@ export default function ServicePage({ params }: ServicePageProps) {
     return (
         <div>
             <ServiceHeader title={serviceData.title} description={serviceData.description} imagePath={serviceData.imageSrc} />
-
-            <div className="py-8 px-6">
+            <div className="py-8">
                 <div>
                     <h2 className="text-3xl font-bold mb-6">{serviceData.title}</h2>
-
                     <div className="grid md:grid-cols-2 gap-8 mb-12">
                         <div>
                             {/* <p className="text-gray-700 mb-6">{serviceData.description}</p> */}
@@ -140,17 +138,17 @@ export default function ServicePage({ params }: ServicePageProps) {
                                 .slice(0, 3)
                                 .map(([key, data]) => (
                                     <Link key={key} href={`/services/${key}`} className="group">
-                                        <div className="border rounded-lg overflow-hidden transition-all group-hover:shadow-md">
+                                        <div className="border overflow-hidden transition-all group-hover:shadow-md">
                                             <div className="relative h-48">
                                                 <Image
                                                     src="/placeholder.svg?height=200&width=400"
                                                     alt={data.title}
                                                     fill
-                                                    className="object-cover"
+                                                    className="object-cover h-96 w-full"
                                                 />
                                             </div>
                                             <div className="p-4">
-                                                <h3 className="font-semibold text-lg mb-2 group-hover:text-blue-600 transition-colors">
+                                                <h3 className="font-semibold text-lg mb-2 group-hover:text-blue-600 transition-colors line-clamp-1">
                                                     {data.title}
                                                 </h3>
                                                 <p className="text-gray-600 text-sm line-clamp-2">{data.description}</p>

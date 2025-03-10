@@ -6,8 +6,6 @@ const WhatsappButton = () => {
         <FloatingWhatsApp
             phoneNumber="+8801643091606"
             notificationSound={true}
-            allowEsc
-            allowClickAway
             notificationSoundSrc="/public/whatsapp.mp3"
             accountName="Ak Contractor Services LTD."
             avatar="https://via.placeholder.com/150"

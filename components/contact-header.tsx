@@ -22,7 +22,7 @@ const ContactHeader: React.FC<ContactHeaderProps> = ({
   secondaryButtonLink,
 }) => {
   return (
-    <section className="relative pt-16 h-[40vh] md:h-[50vh] overflow-hidden">
+    <section className="relative pt-16 h-[40vh] md:h-[30vh] overflow-hidden">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10"></div>
 
@@ -45,7 +45,7 @@ const ContactHeader: React.FC<ContactHeaderProps> = ({
           </h1>
           <p className="text-white text-lg mb-8">{description}</p>
           <div className="flex flex-wrap gap-4">
-            <Button className="bg-blue-600 hover:bg-blue-700">
+            <Button className="bg-green-600 hover:bg-green-700">
               <Link href={primaryButtonLink}>{primaryButtonText}</Link>
             </Button>
             <Button variant="outline" className="bg-white text-black hover:bg-gray-100">

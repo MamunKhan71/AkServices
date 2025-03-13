@@ -71,7 +71,7 @@ const ContactInfo = () => {
                         </div>
                     </CardContent>
                 </Card>
-
+{/* 
                 <Card className="overflow-hidden border-none shadow-md rounded-none">
                     <div className="h-1 bg-primary"></div>
                     <CardContent className="p-6">
@@ -88,7 +88,7 @@ const ContactInfo = () => {
                             </div>
                         </div>
                     </CardContent>
-                </Card>
+                </Card> */}
             </div>
         </div>
     )

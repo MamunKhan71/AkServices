@@ -40,7 +40,7 @@ const services = [
 export default function OurServices() {
     return (
         <section id="services" className="py-20">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <ComponentHeader title="Our Services" subtitle="Comprehensive interior design and renovation solutions for every space" />
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (

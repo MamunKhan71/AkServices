@@ -13,7 +13,7 @@ const features = [
 export default function Features() {
     return (
         <section className="py-20">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8">
                         <h2 className="text-4xl font-bold max-w-xl leading-[32px] md:leading-[48px]">Why Ak Contractor Service is Your Best Choice</h2>

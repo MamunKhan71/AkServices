@@ -38,7 +38,7 @@ const ContactHeader: React.FC<ContactHeaderProps> = ({
       </div>
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-center p-6 md:p-12 z-50">
+      <div className="absolute inset-0 flex flex-col justify-center p-6 md:p-12 z-10">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {title}

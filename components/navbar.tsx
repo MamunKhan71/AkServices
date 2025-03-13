@@ -1,7 +1,7 @@
 "use client"
 import { Menu } from "lucide-react"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -11,12 +11,12 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
+    navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import DummyLogo from "./footer/components/icon/dummyLogo"
 import { navbarRoutes } from "@/data/navbar-routes"
+import DummyLogo from "./footer/components/icon/dummyLogo"
 
-// JSON লোড করে ডাটা ফেচ করার জন্য useState ব্যবহার করা হচ্ছে
 export default function Navbar() {
     const [menuItems, setMenuItems] = useState(navbarRoutes)
     return (
@@ -39,8 +39,8 @@ export default function Navbar() {
                                         <div className="flex flex-col gap-2">
                                             <div className="text-lg font-semibold">{item.label}</div>
                                             {item.submenu.map((sub, subIndex) => (
-                                                <Link key={subIndex} href={sub.href} className="pl-4 text-muted-foreground hover:text-primary">
-                                                    {sub.label}
+                                                <Link key={subIndex} href={sub.items[subIndex].href} className="pl-4 text-muted-foreground hover:text-primary">
+                                                    {sub.items[subIndex].label}
                                                 </Link>
                                             ))}
                                         </div>
@@ -70,27 +70,39 @@ export default function Navbar() {
                                     <>
                                         <NavigationMenuTrigger className="text-base">{item.label}</NavigationMenuTrigger>
                                         <NavigationMenuContent>
-                                            <div className="grid w-[400px] gap-3 p-2">
-                                                {item.submenu.map((sub, subIndex) => (
-                                                    <Link
-                                                        key={subIndex}
-                                                        href={sub.href}
-                                                        className="block select-none space-y-1 p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                                    >
-                                                        <div className="text-base font-medium leading-none">{sub.label}</div>
-                                                        <p className="line-clamp-2 text-base leading-snug text-muted-foreground">
-                                                            {sub.description}
-                                                        </p>
-                                                    </Link>
+                                            <div className="grid w-[900px] grid-cols-4 gap-3 p-4">
+                                                {item.submenu.map((group, groupIndex) => (
+                                                    <div key={groupIndex} className="space-y-3 ">
+                                                        <h4 className="text-sm font-medium leading-none text-muted-foreground">{group.group}</h4>
+                                                        <div className="space-y-2">
+                                                            {group.items.map((subItem, subIndex) => (
+                                                                <NavigationMenuLink asChild key={subIndex}>
+                                                                    <Link
+                                                                        href={subItem.href}
+                                                                        className="group flex items-start gap-2 rounded-none p-2 hover:bg-accent"
+                                                                    >
+
+                                                                        <div className="flex gap-2 items-start">
+                                                                            <div className="mt-0.5">{subItem.icon}</div>
+                                                                            <div>
+                                                                                <div className="text-xs font-medium leading-none group-hover:text-primary">
+                                                                                    {subItem.label}
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </Link>
+                                                                </NavigationMenuLink>
+                                                            ))}
+                                                        </div>
+                                                    </div>
                                                 ))}
                                             </div>
                                         </NavigationMenuContent>
                                     </>
                                 ) : (
                                     <Link href={item.href} legacyBehavior passHref>
-                                        <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center bg-transparent px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
-                                            {item.label}
-                                        </NavigationMenuLink>
+                                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>{item.label}</NavigationMenuLink>
                                     </Link>
                                 )}
                             </NavigationMenuItem>

@@ -1,12 +1,12 @@
+import ContactHeader from "@/components/contact-header"
+import { Card } from "@/components/ui/card"
 import { ChevronRight } from "lucide-react"
 import Link from "next/link"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import ContactHeader from "@/components/contact-header"
 
 const services = [
     {
         title: "Glass Studio Service",
+        linkPrefix: 'glass',
         items: [
             { name: "Frosted Glass Door with Fix Panel", icon: "🚪" },
             { name: "Shop Front Glass Door", icon: "🏪" },
@@ -17,6 +17,7 @@ const services = [
     },
     {
         title: "Glass Studio Service 2",
+        linkPrefix: 'glass',
         items: [
             { name: "Soft Closing Sliding Glass Door", icon: "🚪" },
             { name: "Slidin, Swing, Shower Skin Door Installation", icon: "🚿" },
@@ -27,6 +28,7 @@ const services = [
     },
     {
         title: "Canopy Glass Service",
+        linkPrefix: 'canopy',
         items: [
             { name: "Canopy Glass Roofing", icon: "🏠" },
             { name: "Canopy Polycarbonate Roofing", icon: "🏗️" },
@@ -36,6 +38,7 @@ const services = [
     },
     {
         title: "Plumbing Service",
+        linkPrefix: 'plumbing',
         items: [
             { name: "Installing Heater Switch", icon: "🔌" },
             { name: "Installing Water Heater", icon: "🚰" },
@@ -72,7 +75,7 @@ export default function ServicesPage() {
                                     {category.items.map((item) => (
                                         <li key={item.name}>
                                             <Link
-                                                href={`/services/${item.name.toLowerCase().replace(/\s+/g, "-")}`}
+                                                href={`/services/${category.linkPrefix}/${item.name.toLowerCase().replace(/\s+/g, "-").replace(/[,&]/g, "").replace(/--/g, "-")}`}
                                                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors py-3 bg-gray-50 p-2"
                                             >
                                                 <span className="text-lg">{item.icon}</span>

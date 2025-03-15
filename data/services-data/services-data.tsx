@@ -153,5 +153,48 @@ export const servicesData: Record<string, ServiceContent> = {
             "We offer a range of customization options to meet your specific needs. From different glass types and finishes to various sizes and configurations, our team will work with you to create a shower screen that fits perfectly within your space. Whether you need a corner screen, a bi-fold door, or a sliding panel, we can tailor the design to suit your preferences and requirements.",
         ],
     },
+    "glass-pattison-shopping-mall-and-any-office": {
+        title: "Glass Pattison Shopping Mall and Any Office",
+        imageSrc: '/portfolio/glass-pattison.jpg',
+        description:
+            "One Excel Engineering and Construction Pte. Ltd., we specialize in creating sophisticated Glass Pattison for shopping malls and offices, designed to elevate the functionality and aesthetics of your spaces.",
+        content: [
+            "Our glass pattison are the perfect solution for defining areas while maintaining an open, modern, and inviting atmosphere.",
+            "* Stylish and Functional",
+            "Our glass pattison in shopping malls create stylish and functional divisions between stores, food courts, and communal areas. They offer a clear view of retail spaces, enticing shoppers while maintaining a sense of openness. Customizable to fit the unique design and branding of each mall, these pattison contribute to a sophisticated shopping experience.",
+            "* Glass Pattison for Offices",
+            "In offices, our glass pattison create distinct areas such as meeting rooms, private offices, and collaborative workspaces. These pattison foster an open yet private environment, enhancing communication while providing necessary sound insulation. They are ideal for promoting transparency and modernity in the workplace.",
+            "* Ideal for Any Space Setting",
+            "Beyond malls and offices, our glass pattison are perfect for a variety of spaces, including restaurants, hotels, educational institutions, and residential areas. Whether you're looking to create intimate dining areas, stylish hotel lobbies, or private study rooms, our pattison offer a versatile solution that complements any design.",
+        ],
+    },
+    "custom-glass-work-design-installation": {
+        title: "Custom Glass Work Design & Installation",
+        imageSrc: '/portfolio/custom-glass-work.jpg',
+        description:
+            "One Excel Engineering and Construction Pte. Ltd., we specialize in Custom Glass Work Design, Installation, and Replacement.",
+        content: [
+            "Our expert team crafts and installs bespoke glass solutions for both residential and commercial spaces, enhancing aesthetics and functionality. We ensure precision in every installation and offer swift, reliable glass replacement services. Trust us to deliver quality, innovation, and satisfaction in every project.",
+            "* Precision and Durability Guaranteed",
+            "Installation is where our craftsmanship truly shines. We handle every installation with the utmost care, ensuring perfect alignment, secure fitting, and a flawless finish. Our team follows industry-leading practices to guarantee that each glass installation is not only beautiful but also safe and durable, seamlessly integrating with your existing architecture.",
+            "* Restore and Upgrade",
+            "When it comes to replacement, we offer fast and efficient services to restore or upgrade your glass installations. Whether due to damage, wear, or the desire for a refreshed look, our experts provide solutions that maintain the integrity and aesthetics of your space. We assess, recommend, and replace with precision, minimizing disruption while enhancing the overall appearance.",
+        ],
+    },
+    "sliding-swing-shower-skin-door-installation": {
+        title: "Sliding, Swing, Shower Skin Door Installation",
+        imageSrc: '/portfolio/shower-skin-door.jpg',
+        description:
+            "One Excel Engineering and Construction Pte. Ltd., we offer expert installation services for Sliding, Swing, and Shower Skin Glass Doors, providing elegant and functional solutions for your bathroom and other spaces.",
+        content: [
+            "Our team is dedicated to enhancing your environment with stylish and practical glass installations that meet your specific needs.",
+            "* Sliding Doors",
+            "Our Sliding Doors are designed to maximize space and provide a sleek, modern look to your bathroom. Ideal for smaller bathrooms where space is at a premium, these doors glide effortlessly on high-quality tracks, offering smooth operation and ease of use. Available in various designs and finishes, our sliding doors ensure a clean, contemporary aesthetic while making your bathroom feel more open and accessible.",
+            "* Swing Doors",
+            "For those seeking a classic and versatile option, our Swing Glass Doors are an excellent choice. Perfect for larger bathrooms or any space where you want to make a bold statement, these doors offer a stylish, sophisticated appearance with a traditional swing mechanism. They are available in a range of styles, including frameless and framed options, to suit your design preferences and functional needs.",
+            "* Shower Skin Doors",
+            "Our Shower Skin Doors are crafted from high-quality materials and installed with precision to ensure durability and performance. Our skilled craftsmen use advanced techniques to guarantee that every installation is flawless, providing you with a beautiful and long-lasting addition to your space.",
+        ],
+    }
 }
 

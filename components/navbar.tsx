@@ -16,6 +16,7 @@ import {
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { navbarRoutes } from "@/data/navbar-routes"
 import DummyLogo from "./footer/components/icon/dummyLogo"
+import { ServicesDropdown } from "./services-dropdown"
 
 export default function Navbar() {
     const [menuItems, setMenuItems] = useState(navbarRoutes)
@@ -68,37 +69,7 @@ export default function Navbar() {
                             <NavigationMenuItem key={index}>
                                 {item.submenu ? (
                                     <>
-                                        <NavigationMenuTrigger className="text-base">{item.label}</NavigationMenuTrigger>
-                                        <NavigationMenuContent>
-                                            <div className="grid w-[900px] grid-cols-4 gap-3 p-4">
-                                                {item.submenu.map((group, groupIndex) => (
-                                                    <div key={groupIndex} className="space-y-3 ">
-                                                        <h4 className="text-sm font-medium leading-none text-muted-foreground">{group.group}</h4>
-                                                        <div className="space-y-2">
-                                                            {group.items.map((subItem, subIndex) => (
-                                                                <NavigationMenuLink asChild key={subIndex}>
-                                                                    <Link
-                                                                        href={subItem.href}
-                                                                        className="group flex items-start gap-2 rounded-none p-2 hover:bg-accent"
-                                                                    >
-
-                                                                        <div className="flex gap-2 items-start">
-                                                                            <div className="mt-0.5">{subItem.icon}</div>
-                                                                            <div>
-                                                                                <div className="text-xs font-medium leading-none group-hover:text-primary">
-                                                                                    {subItem.label}
-                                                                                </div>
-
-                                                                            </div>
-                                                                        </div>
-                                                                    </Link>
-                                                                </NavigationMenuLink>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </NavigationMenuContent>
+                                        <ServicesDropdown />
                                     </>
                                 ) : (
                                     <Link href={item.href} legacyBehavior passHref>

@@ -10,7 +10,7 @@ import HeroSection from "./(homepage)/HeroSection";
 export default function Home() {
   return (
     <div >
-      <div className='w-full h-screen'>
+      <div className='w-full'>
         {/* <HeroSlider /> */}
         <HeroSection />
       </div>

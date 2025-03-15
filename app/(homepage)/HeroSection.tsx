@@ -1,58 +1,24 @@
 'use client'
+import { heroImages, heroTexts, services } from "@/data/hero-data";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Home, PaintBucket, Ruler } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const HeroSection = () => {
     const [isHovered, setIsHovered] = useState<number | null>(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
-
-    const images = [
-        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
-        "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
-        "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e"
-    ];
-
-    const heroTexts = [
-        "Transform Your Space Into Something Extraordinary",
-        "Create Your Dream Living Environment",
-        "Elevate Your Lifestyle With Perfect Design"
-    ];
-
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % images.length);
+            setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
             setCurrentTextIndex((prev) => (prev + 1) % heroTexts.length);
         }, 5000);
         return () => clearInterval(timer);
     }, []);
 
-    const services = [
-        {
-            id: 1,
-            title: "Interior Design",
-            description: "Custom designs tailored to your lifestyle and preferences",
-            icon: <Home className="text-4xl mb-4" />
-        },
-        {
-            id: 2,
-            title: "Renovation",
-            description: "Complete home transformation with expert craftsmanship",
-            icon: <PaintBucket className="text-4xl mb-4" />
-        },
-        {
-            id: 3,
-            title: "Space Planning",
-            description: "Optimize your living space with professional planning",
-            icon: <Ruler className="text-4xl mb-4" />
-        }
-    ];
-
     return (
-        <div className="w-full min-h-screen bg-white relative overflow-hidden">
+        <div className="w-full h-full bg-white relative overflow-hidden">
             <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-700" />
                 <div className="grid grid-cols-10 h-full w-full">
                     {[...Array(100)].map((_, i) => (
                         <div key={i} className="border-[0.5px] border-gray-900/20" />
@@ -70,7 +36,7 @@ const HeroSection = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.6 }}
-                                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-relaxed"
                             >
                                 {heroTexts[currentTextIndex]}
                             </motion.h1>
@@ -85,19 +51,42 @@ const HeroSection = () => {
                             We bring your vision to life with expert craftsmanship and attention to detail.
                         </motion.p>
 
-                        <motion.button
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="bg-amber-600 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:bg-amber-700 transition-all duration-300 flex items-center group"
-                        >
-                            Book a Consultation
-                            <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                        </motion.button>
+                        <div className="flex gap-4 items-center">
+                            <motion.button
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-primary text-white px-8 py-4 text-lg font-semibold shadow-lg flex items-center group"
+                            >
+                                Book a Consultation
+                                <ArrowRight className="ml-2" />
+                            </motion.button>
 
-                        <div className="grid md:grid-cols-3 gap-0 mt-12">
+                            <motion.button
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-green-500 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:bg-green-600 transition-all duration-300 flex gap-2 items-center group"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={16}
+                                    height={16}
+                                    fill="currentColor"
+                                    className="bi bi-whatsapp"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                                </svg>
+                                Call Us
+                            </motion.button>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-4 mt-12">
                             {services.map((service) => (
                                 <motion.div
                                     key={service.id}
@@ -133,7 +122,7 @@ const HeroSection = () => {
                         <AnimatePresence mode="wait">
                             <motion.img
                                 key={currentImageIndex}
-                                src={images[currentImageIndex]}
+                                src={heroImages[currentImageIndex]}
                                 alt="Luxurious interior design"
                                 initial={{ opacity: 0, scale: 1.1 }}
                                 animate={{ opacity: 1, scale: 1 }}
@@ -147,13 +136,13 @@ const HeroSection = () => {
 
                         <div className="absolute bottom-4 right-4 space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <button
-                                onClick={() => setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)}
+                                onClick={() => setCurrentImageIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length)}
                                 className="p-2 bg-white/20 backdrop-blur-sm hover:bg-white/40 transition-colors duration-300"
                             >
                                 <ArrowLeft className="text-white text-xl" />
                             </button>
                             <button
-                                onClick={() => setCurrentImageIndex((prev) => (prev + 1) % images.length)}
+                                onClick={() => setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)}
                                 className="p-2 bg-white/20 backdrop-blur-sm hover:bg-white/40 transition-colors duration-300"
                             >
                                 <ArrowRight className="text-white text-xl" />

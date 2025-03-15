@@ -1,5 +1,5 @@
 import ContactHeader from '@/components/contact-header'
-import PortfolioMainSection from './_component/PortfolioMainSection'
+import PortfolioSection from '../(homepage)/OurPortfolio'
 
 const OurPortfolio = () => {
     return (
@@ -15,7 +15,7 @@ const OurPortfolio = () => {
                     secondaryButtonText="Contact Us"
                     secondaryButtonLink="/contact"
                 />
-                <PortfolioMainSection />
+                <PortfolioSection isHomepage={false} />
             </div>
         </div>
     )

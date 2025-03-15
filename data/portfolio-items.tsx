@@ -1,6 +1,6 @@
 import { Building, Code, Compass, Layers, PenTool } from "lucide-react"
 
-export type ProjectCategory = "web" | "design" | "architecture" | "interior" | "branding"
+export type ProjectCategory = "web" | "design" | "architecture" | "interior" | "branding" | "plumbing" | "electrical" | "handyman" | "renovation" | "glass-work" | "painting" | "flooring" | "contracting"
 
 export interface Project {
     id: string
@@ -123,6 +123,12 @@ export const categoryIcons = {
 // Filter categories
 export const categories: { value: ProjectCategory | "all"; label: string }[] = [
     { value: "all", label: "All Projects" },
-    { value: "architecture", label: "Architecture" },
-    { value: "interior", label: "Interior Design" },
+    { value: "plumbing", label: "Plumbing" },
+    { value: "electrical", label: "Electrical" },
+    { value: "handyman", label: "Handyman" },
+    { value: "renovation", label: "Renovation" },
+    { value: "glass-work", label: "Glass Work" },
+    { value: "painting", label: "Painting" },
+    { value: "flooring", label: "Flooring" },
+    { value: "contracting", label: "Contracting" },
 ];

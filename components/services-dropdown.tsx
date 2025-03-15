@@ -189,7 +189,7 @@ export function ServicesDropdown() {
                     </div>
 
                     <div className="bg-gray-50 p-3 border-t border-gray-100">
-                        <Link href="/services" className="text-sm text-primary font-medium hover:underline">
+                        <Link href="/all-services" className="text-sm text-primary font-medium hover:underline">
                             View all services
                         </Link>
                     </div>

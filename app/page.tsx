@@ -17,7 +17,7 @@ export default function Home() {
       <OurServices />
       <OurFeatures />
       <Features />
-      <PortfolioSection />
+      <PortfolioSection isHomepage={true} />
       <Testimonials />
       <ContactSection />
     </div>

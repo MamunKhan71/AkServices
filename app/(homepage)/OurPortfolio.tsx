@@ -1,23 +1,33 @@
-"use client"
-
-import { Button } from "@/components/ui/button"
+'use client'
 import { categories, categoryIcons, ProjectCategory, projects } from "@/data/portfolio-items"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import { ArrowDown, ArrowUpRight } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import { useRef, useState } from "react"
+import Pagination from "../our-portfolio/_component/Pagination"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
-// Define project types
-
-export default function PortfolioSection() {
+export default function PortfolioSection({ isHomepage }: { isHomepage: boolean }) {
     const [activeCategory, setActiveCategory] = useState<ProjectCategory | "all">("all")
     const [hoveredProject, setHoveredProject] = useState<string | null>(null)
+    const [currentPage, setCurrentPage] = useState(1)
+    const projectsPerPage = 6  // Set how many projects per page you want to display
     const containerRef = useRef<HTMLDivElement>(null)
 
     // Filter projects based on active category
     const filteredProjects =
         activeCategory === "all" ? projects : projects.filter((project) => project.category === activeCategory)
+
+    // Calculate total pages
+    const totalPages = Math.ceil(filteredProjects.length / projectsPerPage)
+
+    // Slice projects to show only the current page's projects
+    const paginatedProjects = filteredProjects.slice(
+        (currentPage - 1) * projectsPerPage,
+        currentPage * projectsPerPage
+    )
 
     // Animation variants
     const containerVariants = {
@@ -64,32 +74,36 @@ export default function PortfolioSection() {
                     >
                         Our Proud Portfolio
                     </motion.h2>
-
                 </div>
 
                 {/* Category Filter */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="flex flex-wrap justify-center gap-2 mb-12"
-                >
-                    {categories.map((category) => (
-                        <button
-                            key={category.value}
-                            onClick={() => setActiveCategory(category.value)}
-                            className={cn(
-                                "px-4 py-2 text-sm font-medium transition-all duration-300",
-                                activeCategory === category.value
-                                    ? "bg-gray-900 text-white"
-                                    : "bg-gray-100 text-gray-700 hover:bg-gray-200",
-                            )}
-                        >
-                            {category.label}
-                        </button>
-                    ))}
-                </motion.div>
+                {
+                    !isHomepage && <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="flex flex-wrap justify-center gap-2 mb-12"
+                    >
+                        {categories.map((category) => (
+                            <button
+                                key={category.value}
+                                onClick={() => {
+                                    setActiveCategory(category.value)
+                                    setCurrentPage(1) // Reset to page 1 when a new category is selected
+                                }}
+                                className={cn(
+                                    "px-4 py-2 text-sm font-medium transition-all duration-300",
+                                    activeCategory === category.value
+                                        ? "bg-gray-900 text-white"
+                                        : "bg-gray-100 text-gray-700 hover:bg-gray-200",
+                                )}
+                            >
+                                {category.label}
+                            </button>
+                        ))}
+                    </motion.div>
 
+                }
                 {/* Simple Grid Portfolio */}
                 <motion.div
                     ref={containerRef}
@@ -98,7 +112,7 @@ export default function PortfolioSection() {
                     animate="show"
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
-                    {filteredProjects.map((project) => (
+                    {paginatedProjects.map((project) => (
                         <motion.div
                             key={project.id}
                             variants={itemVariants}
@@ -127,7 +141,7 @@ export default function PortfolioSection() {
                                 >
                                     <div className="flex items-center gap-2 mb-2">
                                         <span className="inline-flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm px-2.5 py-0.5 text-xs font-medium text-white">
-                                            {categoryIcons[project.category]}
+                                            {categoryIcons[project.category as keyof typeof categoryIcons] || null}
                                             <span className="ml-1">{project.category}</span>
                                         </span>
                                         <span className="inline-flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm px-2.5 py-0.5 text-xs font-medium text-white">
@@ -156,16 +170,28 @@ export default function PortfolioSection() {
                                 </h3>
                                 <p className="text-gray-600 text-sm line-clamp-2">{project.description}</p>
                             </div>
-
                         </motion.div>
                     ))}
-                    {/* TODO */}
-                    {/* <div className="col-span-3 flex justify-center items-center w-full mt-4">
-                        <Button className="text-xl">View All <ArrowDown size={20}/></Button>
-                    </div> */}
                 </motion.div>
+
+                {/* Pagination */}
+                {
+                    isHomepage ?
+                        <div className="flex items-center justify-center mt-10">
+                            <Link href={'/our-portfolio'}>
+                                <Button className="p-6">
+                                    View All
+                                    <ArrowUpRight />
+                                </Button>
+                            </Link>
+                        </div>
+                        : <Pagination
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onPageChange={setCurrentPage}
+                        />
+                }
             </div>
         </section>
     )
 }
-

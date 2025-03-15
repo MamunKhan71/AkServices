@@ -21,7 +21,7 @@ import { ServicesDropdown } from "./services-dropdown"
 export default function Navbar() {
     const [menuItems, setMenuItems] = useState(navbarRoutes)
     return (
-        <header className="sticky top-0 z-50 w-full border-b backdrop-blur-md">
+        <header className="sticky top-0 z-50 w-full border-b bg-white">
             <div className="container flex h-20 items-center justify-between mx-auto">
                 {/* Mobile Menu */}
                 <Sheet>

@@ -1,10 +1,11 @@
 "use client"
 
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import { motion } from "framer-motion"
 import { ArrowRight, CheckCircle2, Mail, MessageSquare, Send } from "lucide-react"
 import { useState } from "react"
-import './contact.css'
-// Loading button that shows status
 function SubmitButton() {
     const [pending, setPending] = useState(false)
 
@@ -75,10 +76,10 @@ export default function ContactSection() {
 
     return (
         <section
-            style={{ backgroundImage: `url('/interior-background.webp')` }}
+            style={{ backgroundImage: `url('/contact-us.jpg')` }}
             className="h-full w-full bg-cover relative"
         >
-            <div className="bg-[#010f22] w-full h-full bg-cover absolute opacity-70"></div>
+            <div className="bg-white w-full h-full bg-cover absolute opacity-80"></div>
             <div className="container mx-auto py-32 relative z-10">
                 <motion.div
                     variants={containerVariants}
@@ -87,40 +88,40 @@ export default function ContactSection() {
                     className="grid lg:grid-cols-2 gap-12 lg:gap-20"
                 >
                     {/* Left Column - Contact Info */}
-                    <motion.div variants={itemVariants} className="space-y-8 text-white">
+                    <motion.div variants={itemVariants} className="space-y-8 text-primary">
                         <div className="space-y-4">
                             <motion.span
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                className="text-white font-bold"
+                                className="text-primary font-bold"
                             >
                                 Get in Touch
                             </motion.span>
                             <h2 className="text-3xl md:text-4xl font-bold">Let's Work Together</h2>
-                            <p className="max-w-md text-white font-medium">
+                            <p className="max-w-md text-primary font-medium">
                                 Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you as soon
                                 as possible.
                             </p>
                         </div>
 
                         <motion.div variants={containerVariants} className="space-y-6">
-                            <motion.div variants={itemVariants} className="flex items-start space-x-4 text-white">
-                                <div className="mt-1 bg-white rounded-full p-3 shadow-sm">
-                                    <Mail className="w-5 h-5 text-gray-600" />
+                            <motion.div variants={itemVariants} className="flex items-start space-x-4 text-primary">
+                                <div className="mt-1 bg-primary rounded-none p-3 shadow-sm">
+                                    <Mail className="w-5 h-5 text-white" />
                                 </div>
                                 <div>
                                     <h3 className="font-medium">Email</h3>
-                                    <p className="text-white font-medium">hello@company.com</p>
+                                    <p className="text-primary font-medium">hello@company.com</p>
                                 </div>
                             </motion.div>
 
                             <motion.div variants={itemVariants} className="flex items-start space-x-4">
-                                <div className="mt-1 bg-white rounded-full p-3 shadow-sm">
-                                    <MessageSquare className="w-5 h-5 text-gray-600" />
+                                <div className="mt-1 bg-primary rounded-none p-3 shadow-sm">
+                                    <MessageSquare className="w-5 h-5 text-white" />
                                 </div>
                                 <div>
                                     <h3 className="font-medium">Live Chat</h3>
-                                    <p className="text-white font-medium">Available Mon-Fri, 9am-6pm</p>
+                                    <p className="text-primary font-medium">Available Mon-Fri, 9am-6pm</p>
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -182,28 +183,28 @@ export default function ContactSection() {
                                 className="space-y-6 bg-transparent backdrop-blur-lg rounded-2xl p-8 shadow-sm"
                             >
                                 <motion.div variants={itemVariants} className="w-full">
-                                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                                    <Label htmlFor="email">
                                         Name
-                                    </label>
+                                    </Label>
                                     <div>
-                                        <input placeholder="Type your name" type="text" className="input w-full" />
+                                        <Input className="py-6"  placeholder="Your email"/>
                                     </div>
                                 </motion.div>
 
                                 <motion.div variants={itemVariants} className="w-full">
-                                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                                    <Label htmlFor="email">
                                         Email
-                                    </label>
+                                    </Label>
                                     <div>
-                                        <input placeholder="Type your email" type="email" className="input w-full" />
+                                        <Input className="py-6" placeholder="Type your email" type="email"/>
                                     </div>
                                 </motion.div>
 
                                 <motion.div variants={itemVariants}>
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                                    <Label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                                         Message
-                                    </label>
-                                    <textarea
+                                    </Label>
+                                    <Textarea
                                         id="message"
                                         name="message"
                                         required

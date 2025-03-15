@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowLeft, Star, Phone, Calendar, Clock, MapPin, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Calendar, Check, Clock, MapPin, Phone, Star } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useState } from "react"
 
 export default function ProjectDetails({ params }: { params: { id: string } }) {
     const project = projects.find((p) => p.id === params.id)

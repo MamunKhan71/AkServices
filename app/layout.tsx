@@ -1,10 +1,10 @@
 import Footer from "@/components/footer/footer";
+import LenisScrollWrapper from "@/components/LenisScrollWrapper";
 import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import WhatsappButton from "./services2/_components/WhatsappButton";
-import LenisScrollWrapper from "@/components/LenisScrollWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

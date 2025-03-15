@@ -140,7 +140,7 @@ export const navbarRoutes = [
     },
     {
         "label": "Portfolio",
-        "href": "/portfolio"
+        "href": "/our-portfolio"
     },
     {
         "label": "About",

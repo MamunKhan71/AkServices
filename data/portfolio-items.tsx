@@ -199,6 +199,46 @@ export const projects: Project[] = [
         year: "2024",
         client: "Urban Renovators Ltd.",
     },
+    {
+        id: "p19",
+        title: "Living Room Painting",
+        description: "Elegant and modern painting services for living rooms, enhancing the ambiance and style.",
+        category: "painting",
+        image: "/portfolio/living-room-painting.jpg",
+        link: "/projects/living-room-painting",
+        year: "2024",
+        client: "Home Decor Ltd.",
+    },
+    {
+        id: "p20",
+        title: "Office Space Painting",
+        description: "Professional painting services for office spaces, creating a productive and vibrant environment.",
+        category: "painting",
+        image: "/portfolio/office-painting.jpg",
+        link: "/projects/office-painting",
+        year: "2024",
+        client: "Corporate Interiors Inc.",
+    },
+    {
+        id: "p21",
+        title: "Hardwood Flooring Installation",
+        description: "High-quality hardwood flooring installation for a timeless and elegant look.",
+        category: "flooring",
+        image: "/portfolio/hardwood-flooring.jpg",
+        link: "/projects/hardwood-flooring",
+        year: "2024",
+        client: "Flooring Experts Ltd.",
+    },
+    {
+        id: "p22",
+        title: "Tile Flooring Installation",
+        description: "Durable and stylish tile flooring installation for residential and commercial properties.",
+        category: "flooring",
+        image: "/portfolio/tile-flooring.jpg",
+        link: "/projects/tile-flooring",
+        year: "2024",
+        client: "Tile Masters Inc.",
+    }
 ]
 
 // Category icons mapping

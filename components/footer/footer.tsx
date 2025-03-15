@@ -8,8 +8,8 @@ import ScrollToTopIcon from '../ui/ScrollToTopIcon'
 const Footer = () => {
     return (
         <div className='bg-[#010F22] relative'>
-            <div className='container mx-auto py-11 w-full'>
-                <div className="flex justify-between items-start gap-16">
+            <div className='container mx-auto py-11 w-full px-4 md:px-0'>
+                <div className="flex flex-wrap md:flex-nowrap justify-between items-start gap-16">
                     <FooterFirst />
                     {/* Footer second portion */}
                     <FooterContent title='Quick Links' links={footerQuickLinks} />

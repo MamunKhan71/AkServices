@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <LenisScrollWrapper>
           <Navbar />
-          <div className="min-h-screen">
+          <div className="min-h-screen px-4 md:px-0">
             {children}
           </div>
           <Footer />
